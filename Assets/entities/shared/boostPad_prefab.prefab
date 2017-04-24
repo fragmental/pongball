@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65993148878268826}
   - component: {fileID: 114975120701333730}
   - component: {fileID: 114122917043499986}
+  - component: {fileID: 114622181859508598}
   m_Layer: 0
   m_Name: boostPad_prefab
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998836680371244}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06, y: 1, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
@@ -122,9 +123,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba0f91c77f44954d8f983f03f95e95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 0.46323532, g: 0.46323532, b: 0.46323532, a: 0}
-  lightColor: {r: 0.12829626, g: 0.8088235, b: 0, a: 0}
+  baseColor: {r: 0.102941155, g: 0.102941155, b: 0.102941155, a: 0}
+  lightColor: {r: 0.10496967, g: 0.66176474, b: 0, a: 0}
   fadeDuration: 1
+--- !u!114 &114622181859508598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998836680371244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f6b4754a94e5248a4356bde9fe0347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionIsForward: 0
+  boostPad: {fileID: 0}
 --- !u!114 &114975120701333730
 MonoBehaviour:
   m_ObjectHideFlags: 1

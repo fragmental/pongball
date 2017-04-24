@@ -5,39 +5,27 @@ using UnityEngine;
 public class BoostPadForce : MonoBehaviour
 {
 
-    private float force = 10.0f;
+    private float force = 20.0f;
     public Vector3 forceDirection = Vector3.zero;
+    public bool boostEnabled;
 
-    //private Vector3 myStartingScale = Vector3.zero;
-    //private float scaleFactor = 1.2f;
-    private float lerpAmount = 0.05f;
-
-    /*private void Start()
-    {
-        myStartingScale = transform.localScale;
-    }
-
-    private void Update()
-    {
-        transform.localScale = Vector3.Lerp(transform.localScale, myStartingScale, lerpAmount);
-    }*/
+    //private float lerpAmount = 0.05f;
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Ball")
+        if (collider.tag == "Ball" && boostEnabled == true)
         {
             Rigidbody rigidBody = collider.gameObject.GetComponent<Rigidbody>();
-            //Vector3 forceVector = rigidBody.transform.forward.normalized;
             Vector3 forceVector = forceDirection;
-            forceVector.y = 0;
-            rigidBody.AddForce(forceVector * force);
+            forceVector.x = 1;
+            //rigidBody.velocity = direction;
+            //rigidBody.AddRelativeForce(force,0,0);
+            //rigidBody.AddForce(forceVector * force);
+            //rigidBody.AddRelativeForce(direction, ForceMode.Impulse);
+            //rigidBody.AddForce(direction, ForceMode.Impulse);
+            Debug.Log("BoostPadEntered");
 
-            /*Vector3 newScale = new Vector3(
-                myStartingScale.x * scaleFactor,
-                myStartingScale.y * scaleFactor,
-                myStartingScale.z * scaleFactor);
-
-            transform.localScale = newScale;*/
+            
         }
     }
 }

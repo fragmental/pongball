@@ -9,7 +9,7 @@ public class SpinnerActivator : MonoBehaviour
 
     private void Start()
     {
-        boost.GetComponent<BoostPadForce>().enabled = false;
+        boost.GetComponent<BoostPadForce>().boostEnabled = false;
         boost.GetComponent<BoostPad>().lightDisabled();
 
     }
@@ -18,13 +18,15 @@ public class SpinnerActivator : MonoBehaviour
     {
         if (boostEnabled == true)
         {
-            boost.GetComponent<BoostPadForce>().enabled = false;
+            boost.GetComponent<BoostPadForce>().boostEnabled = false;
             boost.GetComponent<BoostPad>().lightDisabled();
+            boostEnabled = false;
         }
         else if (boostEnabled == false)
         {
-            boost.GetComponent<BoostPadForce>().enabled = true;
+            boost.GetComponent<BoostPadForce>().boostEnabled = true;
             boost.GetComponent<BoostPad>().lightEnabled();
+            boostEnabled = true;
         }
 
 
