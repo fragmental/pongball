@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class BoostPadForce : MonoBehaviour
 {
-
-    private float force = 20.0f;
+    private float force = 0.25f;
     public Vector3 forceDirection = Vector3.zero;
     public bool boostEnabled;
 
-    //private float lerpAmount = 0.05f;
+    Vector3 forceVector;
+    Vector3 forward = new Vector3(-1, 0, 0);
+
+    private void Update()
+    {
+        forceVector = transform.rotation * forward;
+        forceVector.y = 0;
+
+        // Assign forceDirection so we can see it in the editor, this can be removed.
+        forceDirection = forceVector;
+    }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Ball" && boostEnabled == true)
         {
             Rigidbody rigidBody = collider.gameObject.GetComponent<Rigidbody>();
-            Vector3 forceVector = forceDirection;
-            forceVector.x = 1;
-            //rigidBody.velocity = direction;
-            //rigidBody.AddRelativeForce(force,0,0);
-            //rigidBody.AddForce(forceVector * force);
-            //rigidBody.AddRelativeForce(direction, ForceMode.Impulse);
-            //rigidBody.AddForce(direction, ForceMode.Impulse);
-            Debug.Log("BoostPadEntered");
+            rigidBody.AddRelativeForce(forceVector.normalized * force, ForceMode.Impulse);
 
-            
+            Debug.Log("BoostPadEntered");
         }
     }
 }

@@ -927,7 +927,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4242479738366736, guid: 2586596033e1f814a82a71faa8fb03e8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.838
       objectReference: {fileID: 0}
     - target: {fileID: 4242479738366736, guid: 2586596033e1f814a82a71faa8fb03e8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -957,6 +957,16 @@ Prefab:
         type: 2}
       propertyPath: directionIsForward
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23738151970590528, guid: 2586596033e1f814a82a71faa8fb03e8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65993148878268826, guid: 2586596033e1f814a82a71faa8fb03e8,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 67.92
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2586596033e1f814a82a71faa8fb03e8, type: 2}
@@ -1656,6 +1666,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114975120701333730, guid: 2586596033e1f814a82a71faa8fb03e8,
+        type: 2}
+      propertyPath: boostEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2586596033e1f814a82a71faa8fb03e8, type: 2}
   m_IsPrefabParent: 0
@@ -2329,7 +2344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1313462075
 Transform:
   m_ObjectHideFlags: 0
@@ -2502,7 +2517,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4653202098466440, guid: 9a829cba44a814e8d97da9ac5bfc0a66, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.85
       objectReference: {fileID: 0}
     - target: {fileID: 4653202098466440, guid: 9a829cba44a814e8d97da9ac5bfc0a66, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2510,7 +2525,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4653202098466440, guid: 9a829cba44a814e8d97da9ac5bfc0a66, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4653202098466440, guid: 9a829cba44a814e8d97da9ac5bfc0a66, type: 2}
       propertyPath: m_LocalRotation.x
