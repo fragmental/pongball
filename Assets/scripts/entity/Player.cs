@@ -22,6 +22,10 @@ public class Player : PaddleBase {
 		SetThrust(20);
     }
 
+    float zMovement = 0.0f;
+    float lerpFactor = .4f;
+    float speed = 1;
+
     private new void FixedUpdate()
     {
         base.FixedUpdate();
@@ -33,29 +37,33 @@ public class Player : PaddleBase {
         else
         {
             stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
+            MovePaddles(stickInput.y);
         }
-        MovePaddles(stickInput.y);
+        
 
+           
+            //float vaxis = Mathf.Lerp(zMovement, (Input.GetAxis(playerNum + "Vertical") / 50), lerpFactor * (Time.deltaTime * 6)) * speed;
+        //Debug.Log("vaxis = " + vaxis);
 
-        // float haxis = Input.GetAxis(playerNum+"Horizontal");
-        //float vaxis = Input.GetAxis(playerNum+"Vertical");
+            // float haxis = Input.GetAxis(playerNum+"Horizontal");
+            //float vaxis = Input.GetAxis(playerNum+"Vertical");
 
-        //Local Multiplayer
+            //Local Multiplayer
 
-        /*
-        if (haxis != 0)
-        {
+            /*
+            if (haxis != 0)
+            {
+
+            }
             
-        }
-
-        if (vaxis != 0)
-        {
-            MovePaddles(vaxis);
-        }*/
-
-        // If Fire1 is pressed, trigger pull animation
-        //if (Input.GetButton("Fire1"))
-        if (Input.GetButton(playerNum+"Fire1"))
+            if (vaxis != 0)
+            {
+                MovePaddles(vaxis);
+            }
+            */
+            // If Fire1 is pressed, trigger pull animation
+            //if (Input.GetButton("Fire1"))
+            if (Input.GetButton(playerNum+"Fire1"))
 
         {
             animator.SetBool("pull", true);
