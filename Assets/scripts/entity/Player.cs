@@ -26,17 +26,23 @@ public class Player : PaddleBase {
     {
         base.FixedUpdate();
 
-        //float haxis = Input.GetAxis("Horizontal");
-        //float vaxis = Input.GetAxis("Vertical");
+        float deadzone = 0.25f;
+        Vector2 stickInput = new Vector2(Input.GetAxis(playerNum + "Horizontal"), Input.GetAxis(playerNum + "Vertical"));
+        if (stickInput.magnitude < deadzone)
+            stickInput = Vector2.zero;
+        else
+        {
+            stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
+        }
+        MovePaddles(stickInput.y);
 
-        //testing 2 player local
-        float haxis = Input.GetAxis(playerNum+"Horizontal");
-        float vaxis = Input.GetAxis(playerNum+"Vertical");
-        //float vaxis = Input.GetAxis("1Vertical");
 
+        // float haxis = Input.GetAxis(playerNum+"Horizontal");
+        //float vaxis = Input.GetAxis(playerNum+"Vertical");
 
         //Local Multiplayer
 
+        /*
         if (haxis != 0)
         {
             
@@ -45,7 +51,7 @@ public class Player : PaddleBase {
         if (vaxis != 0)
         {
             MovePaddles(vaxis);
-        }
+        }*/
 
         // If Fire1 is pressed, trigger pull animation
         //if (Input.GetButton("Fire1"))
